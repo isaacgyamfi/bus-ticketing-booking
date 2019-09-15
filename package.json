@@ -1,0 +1,32 @@
+{
+  "name": "airline-ticketing",
+  "version": "1.0.0",
+  "description": "airline ticketing server for booking flights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacgyamfi/airline-ticketing-booking.git"
+  },
+  "keywords": [
+    "airline",
+    "booking"
+  ],
+  "author": "group-work",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacgyamfi/airline-ticketing-booking/issues"
+  },
+  "homepage": "https://github.com/isaacgyamfi/airline-ticketing-booking#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
