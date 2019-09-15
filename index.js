@@ -10,6 +10,9 @@ const errorController = require('./controllers/error');
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+
 // routes middlewares
 app.use(userRoutes);
 // app.use(bookingRoutes);
