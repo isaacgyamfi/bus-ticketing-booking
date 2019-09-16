@@ -14,6 +14,7 @@ exports.postNewUser = (req, res) => {
     .save()
     .then(result => {
       console.log('New user created');
+      res.status(200).send(JSON.stringify(result));
     })
     .catch(err => {
       console.log(err);
