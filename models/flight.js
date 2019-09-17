@@ -18,7 +18,7 @@ const flightSchema = new Schema({
         required: true
       },
       services: {
-        type: String,
+        type: [String],
         required: false
       },
       location: {
@@ -40,6 +40,18 @@ const flightSchema = new Schema({
       type: Date,
       required: true
     }
+  },
+  booking: {
+    bookings: [
+      {
+        bookingId: {
+          type: Schema.Types.ObjectId,
+          ref: 'Booking',
+          required: true
+        },
+        numberOfBookings: { type: Number, required: true }
+      }
+    ]
   }
 });
 

@@ -38,6 +38,17 @@ exports.postUserBooking = (req, res) => {
 
 exports.getAllUserBookings = (req, res) => {};
 
-exports.deleteBooking = (req, res) => {};
+exports.deleteBooking = (req, res) => {
+  const bookingId = req.params.bookingId;
+  User.findByIdAndRemove(bookingId)
+    .then(bookings => {
+      console.log('Booking deleted');
+      console.log(bookings);
+      return res.status(200).send('User deleted');
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
 exports.deleteUserBooking = (req, res) => {};

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 // const bcrypt = require('bcrypt');
+require('dotenv').config();
 
 // importing the routes
 const userRoutes = require('./routes/user');
@@ -28,8 +29,11 @@ const port = 5000;
 
 mongoose
   .connect(
-    'mongodb+srv://isaacgyamfi177:bohyeba123@cluster0-ivlzn.mongodb.net/airline?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0-ivlzn.mongodb.net/airline?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
   )
   .then(result => {
     app.listen(port, () => console.log('Connected!'));
