@@ -14,19 +14,19 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
-  booking: {
-    bookings: [
-      {
-        bookingId: {
-          type: Schema.Types.ObjectId,
-          ref: 'Booking',
-          required: true
-        },
-        numberOfBookings: { type: Number, required: true }
-      }
-    ]
   }
+  // booking: {
+  //   bookings: [
+  //     {
+  //       bookingId: {
+  //         type: Schema.Types.ObjectId,
+  //         ref: 'Booking',
+  //         required: true
+  //       },
+  //       numberOfBookings: { type: Number, required: true }
+  //     }
+  //   ]
+  // }
 });
 
 module.exports = mongoose.model('User', userSchema);

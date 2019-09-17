@@ -4,18 +4,20 @@ const mongoose = require('mongoose');
 
 // importing the routes
 const userRoutes = require('./routes/user');
-// const bookingRoutes = require('./routes/booking');
+const bookingRoutes = require('./routes/booking');
+const flightRoutes = require('./routes/flight');
 // const adminRoutes = require('./routes/admin');
 const errorController = require('./controllers/error');
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }));
 
 // routes middlewares
 app.use(userRoutes);
-// app.use(bookingRoutes);
+app.use(bookingRoutes);
+app.use(flightRoutes);
 // app.use('/admin', adminRoutes);
 
 // middleware for errors

@@ -38,8 +38,12 @@ exports.getUser = (req, res) => {
   const userId = req.params.userId;
   User.findById(userId)
     .then(user => {
-      console.log(user);
-      res.status(200).send(JSON.stringify(user));
+      if (!user) {
+        res.status(200).send('User can not be found');
+      } else {
+        console.log(user);
+        res.status(200).send(JSON.stringify(user));
+      }
     })
     .catch(err => {
       console.log(err);
@@ -57,6 +61,7 @@ exports.getEditUser = (req, res) => {
   User.findById(userId)
     .then(user => {
       if (!user) {
+        console.log('User does not exist');
         return res.status(200).send('User can not be found');
       }
       res.status(200).send(JSON.stringify(user));
@@ -66,7 +71,7 @@ exports.getEditUser = (req, res) => {
 
 // update a single user
 exports.postEditUser = (req, res) => {
-  const userId = req.body.userId;
+  const userId = req.params.userId;
   const newName = req.body.name;
   const newEmail = req.body.email;
   const newPassword = req.body.password;
@@ -80,19 +85,28 @@ exports.postEditUser = (req, res) => {
     })
     .then(result => {
       console.log('User profile updated');
-      res.status(200).send(JSON.stringify(user));
+      // res.status(200).send(JSON.stringify(user));
     })
     .catch(err => console.log(err));
 };
 
 exports.postDeleteUser = (req, res) => {
-  const userId = req.body.userId;
+  const userId = req.params.userId;
   User.findByIdAndRemove(userId)
-    .then(() => {
+    .then(users => {
       console.log('User deleted');
-      res.status(200).send('User deleted');
+      console.log(users);
+      return res.status(200).send('User deleted');
     })
     .catch(err => {
       console.log(err);
     });
+  // User.find()
+  //   .then(users => {
+  //     console.log(users);
+  //     res.status(200).send(JSON.stringify(users));
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
 };

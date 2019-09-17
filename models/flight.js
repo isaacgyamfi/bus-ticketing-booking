@@ -4,20 +4,41 @@ const Schema = mongoose.Schema;
 
 const flightSchema = new Schema({
   flight: {
-    type: Schema.Types.ObjectId,
-    ref: 'Booking'
+    name: {
+      type: String,
+      required: true
+    },
+    flightID: {
+      type: String,
+      required: true
+    },
+    management: {
+      operator: {
+        type: String,
+        required: true
+      },
+      services: {
+        type: String,
+        required: false
+      },
+      location: {
+        type: String,
+        required: true
+      }
+    }
   },
   price: {
     type: Number,
     required: true
   },
   time: {
-    departureTime: {
-      type: new Date().setTime(),
+    departureTimes: {
+      type: Date,
       required: true
     },
-    arrivalTime: {
-      type: new Date().setTime()
+    arrivalTimes: {
+      type: Date,
+      required: true
     }
   }
 });

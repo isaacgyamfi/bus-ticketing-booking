@@ -3,10 +3,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const bookingSchema = new Schema({
+  // bookingId: {
+  //   type: String,
+  //   required: true
+  // },
+  // userId: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
+  bookingDate: {
+    type: Date,
+    required: true,
+    default: Date.now()
+  },
   flight: {
-    type: Object,
-    flightId: String,
-    required: true
+    flightDeparture: {
+      type: Date,
+      required: true
+    },
+    flightArrival: {
+      type: Date,
+      required: true
+    }
   }
 });
 
