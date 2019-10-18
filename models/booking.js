@@ -8,13 +8,13 @@ const bookingSchema = new Schema({
     required: true,
     default: Date.now()
   },
-  flight: {
-    flightId: {
+  journey: {
+    journeyId: {
       type: Schema.Types.ObjectId,
-      ref: 'Flight',
+      ref: 'Journey',
       required: true
     },
-    flightConfirmation: {
+    journeyConfirmation: {
       type: Boolean,
       required: true,
       default: false

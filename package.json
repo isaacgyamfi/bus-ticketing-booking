@@ -1,7 +1,7 @@
 {
   "name": "airline-ticketing",
   "version": "1.0.0",
-  "description": "airline ticketing server for booking flights",
+  "description": "Bus booking application server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isaacgyamfi/airline-ticketing-booking.git"
+    "url": "git+https://github.com/isaacgyamfi/bus-ticketing-booking.git"
   },
   "keywords": [
     "airline",
@@ -18,9 +18,9 @@
   "author": "group-work",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isaacgyamfi/airline-ticketing-booking/issues"
+    "url": "https://github.com/isaacgyamfi/bus-ticketing-booking/issues"
   },
-  "homepage": "https://github.com/isaacgyamfi/airline-ticketing-booking#readme",
+  "homepage": "https://github.com/isaacgyamfi/bus-ticketing-booking#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "dotenv": "^8.1.0",

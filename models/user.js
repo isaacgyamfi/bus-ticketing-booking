@@ -29,27 +29,27 @@ const userSchema = new Schema({
   }
 });
 
-userSchema.methods.addBooking = function(flightBook) {
-  const flightBookingIndex = this.booking.bookings.findIndex(fb => {
-    fb.bookingId.toString() === flightBook._id.toString();
+userSchema.methods.addBooking = function(journeyBook) {
+  const journeyBookingIndex = this.booking.bookings.findIndex(fb => {
+    fb.bookingId.toString() === journeyBook._id.toString();
   });
   let newNumberOfBookings = 1;
-  const updatedFlightBookings = [...this.booking.bookings];
+  const updatedJourneyBookings = [...this.booking.bookings];
 
-  if (flightBookingIndex >= 0) {
+  if (journeyBookingIndex >= 0) {
     newNumberOfBookings =
-      this.booking.bookings[flightBookingIndex].numberOfBookings + 1;
-    updatedFlightBookings[
-      flightBookingIndex
+      this.booking.bookings[journeyBookingIndex].numberOfBookings + 1;
+    updatedJourneyBookings[
+      journeyBookingIndex
     ].numberOfBookings = newNumberOfBookings;
   } else {
-    updatedFlightBookings.push({
-      bookingId: flightBook._id,
+    updatedJourneyBookings.push({
+      bookingId: journeyBook._id,
       numberOfBookings: newNumberOfBookings
     });
   }
   const updatedBooking = {
-    bookings: updatedFlightBookings
+    bookings: updatedJourneyBookings
   };
   this.booking = updatedBooking;
   return this.save();
