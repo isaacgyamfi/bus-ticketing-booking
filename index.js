@@ -6,7 +6,7 @@ require('dotenv').config();
 // importing the routes
 const userRoutes = require('./routes/user');
 const bookingRoutes = require('./routes/booking');
-const flightRoutes = require('./routes/flight');
+const journeyRoutes = require('./routes/journey');
 // const adminRoutes = require('./routes/admin');
 const errorController = require('./controllers/error');
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // routes middlewares
 app.use(userRoutes);
 app.use(bookingRoutes);
-app.use(flightRoutes);
+app.use(journeyRoutes);
 // app.use('/admin', adminRoutes);
 
 // middleware for errors

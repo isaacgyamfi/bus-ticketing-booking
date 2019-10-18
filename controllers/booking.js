@@ -14,15 +14,15 @@ exports.getAllBookings = (req, res) => {
 
 exports.postUserBooking = (req, res) => {
   const bookingDate = req.body.bookingDate;
-  const flightDepartureDate = req.body.flight.flightDepartureDate;
-  const flightArrivalDate = req.body.flight.flightArrivalDate;
+  const journeyDepartureDate = req.body.journey.journeyDepartureDate;
+  const journeyArrivalDate = req.body.journey.journeyArrivalDate;
 
   // create a new instance of a booking
   const booking = new Booking({
     bookingDate: bookingDate,
-    flight: {
-      flightDeparture: flightDepartureDate,
-      flightArrival: flightArrivalDate
+    journey: {
+      journeyDeparture: journeyDepartureDate,
+      journeyArrival: journeyArrivalDate
     }
   });
   booking

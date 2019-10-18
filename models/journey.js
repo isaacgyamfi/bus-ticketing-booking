@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const flightSchema = new Schema({
-  flight: {
+const journeySchema = new Schema({
+  journey: {
     name: {
       type: String,
       required: true
     },
-    flightID: {
+    journeyID: {
       type: String,
       required: true
     },
@@ -55,4 +55,4 @@ const flightSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Flight', flightSchema);
+module.exports = mongoose.model('Flight', journeySchema);
